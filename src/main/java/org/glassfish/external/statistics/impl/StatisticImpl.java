@@ -7,6 +7,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+// Portions Copyright [2022] Payara Foundation and/or affiliates
 
 package org.glassfish.external.statistics.impl;
 import org.glassfish.external.statistics.Statistic;
@@ -35,7 +36,7 @@ public abstract class StatisticImpl implements Statistic {
 
     protected final Map<String, Object> statMap = new ConcurrentHashMap<String, Object> ();
     
-    protected static final String NEWLINE = System.getProperty( "line.separator" );
+    protected static final String NEWLINE = System.lineSeparator();
 
     protected StatisticImpl(String name, String unit, String desc, 
                           long start_time, long sample_time) {
@@ -105,6 +106,7 @@ public abstract class StatisticImpl implements Statistic {
         startTime = System.currentTimeMillis();
     }
 
+    @Override
     public synchronized String toString() {
         return "Statistic " + getClass().getName() + NEWLINE +
             "Name: " + getName() + NEWLINE +

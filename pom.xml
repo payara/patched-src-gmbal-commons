@@ -104,10 +104,12 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>${upper.jdk.version}</release>
                     <compilerArgs>
                         <arg>-Xlint:all</arg>
                     </compilerArgs>
+                    <excludes>
+                        <exclude>module-info.java</exclude>
+                    </excludes>
                 </configuration>
                 <executions>
                     <execution>
@@ -116,7 +118,6 @@
                             <goal>compile</goal>
                         </goals>
                         <configuration>
-                            <release>${base.jdk.version}</release>
                             <excludes>
                                 <exclude>module-info.java</exclude>
                             </excludes>
