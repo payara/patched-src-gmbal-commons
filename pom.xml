@@ -22,7 +22,7 @@
 
     <groupId>org.glassfish.external</groupId>
     <artifactId>management-api</artifactId>
-    <version>3.3.0</version>
+    <version>3.3.0.payara-p1</version>
     <packaging>jar</packaging>
 
     <name>management-api</name>
